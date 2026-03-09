@@ -61,7 +61,7 @@ export default function Home() {
     setShowForm(false);
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: string) => {
     await deleteDoc(doc(db, "items", id));
   };
 
