@@ -65,7 +65,7 @@ export default function Home() {
     await deleteDoc(doc(db, "items", id));
   };
 
-  const handleEdit = (item) => {
+  const handleEdit = (item: any) => {
     setEditingId(item.id);
     setEditForm({ status: item.status, notes: item.notes });
   };
@@ -260,7 +260,7 @@ export default function Home() {
                   </div>
                   <span
                     className={`text-xs tracking-widest uppercase px-3 py-1 ${
-                      statusStyles[item.status]
+                      statusStyles[item.status as keyof typeof statusStyles]
                     }`}
                   >
                     {item.status}
