@@ -70,7 +70,7 @@ export default function Home() {
     setEditForm({ status: item.status, notes: item.notes });
   };
 
-  const handleSaveEdit = async (id) => {
+  const handleSaveEdit = async (id: string) => {
     await updateDoc(doc(db, "items", id), {
       status: editForm.status,
       notes: editForm.notes,
